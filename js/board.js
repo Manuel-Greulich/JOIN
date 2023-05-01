@@ -182,7 +182,6 @@ function convertDueDate(task) {
  */
 function doNotClose(event) {
     event.stopPropagation();
-
 }
 
 /**
@@ -259,8 +258,10 @@ function renderButtons(task) {
  */
 function showTaskDetailsTemplate(task) {
     return /*html*/ `
+    <div class="card-flex"> 
     <button class="edit-overlay-btn" onclick="showAddTaskEdit(${task['id']})"><img src="assets/img/pencil.svg" ></button>
     <button class="edit-overlay-btn-delete" onclick="showDeleteTaskAlert(${task['id']})"><img src="assets/img/trash.png" ></button>
+    </div>
     <span class="directionLTR"><span class="card-category-big" style="background-color: ${task['category']['color']};">${task['category']['name']}</span></span>
     <span class="card-title-big directionLTR">${task['title']}</span>
     <span class="card-description-big directionLTR">${task['description']}</span>
@@ -345,7 +346,7 @@ function searchTask() {
 /**
  * updates input in search at mobileversion when put into destop and the other way around
  */
-function updateSearchDestopMobile(){
+function updateSearchDestopMobile() {
     if (document.body.clientWidth > 1024) {
         searchTaskInput = document.getElementById('searchTaskDestop').value;
         document.getElementById('searchTaskMobile').value = searchTaskInput;

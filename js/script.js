@@ -35,8 +35,7 @@ async function init() {
     contacts = JSON.parse(backend.getItem('contact')) || [];
 
     activeUser = JSON.parse(localStorage.getItem('activeUser')) || [];
-    console.log('Active user:', activeUser);
-
+    // console.log('Active user:', activeUser);
 }
 
 /**
